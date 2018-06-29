@@ -23,15 +23,15 @@ function getData(length: number): string {
   return data;
 }
 
-test('allows 22 characters of data', t => {
+test('allows 23 characters of data', t => {
   const anonymousMemo = new AnonymousMemo('encryption secret');
-  const data = getData(22);
+  const data = getData(23);
   const memo = anonymousMemo.toMemo(data);
   t.truthy(memo);
 });
 
-test('does not allow more than 22 characters of data', t => {
+test('does not allow more than 23 characters of data', t => {
   const anonymousMemo = new AnonymousMemo('encryption secret');
-  const data = getData(23);
+  const data = getData(24);
   t.throws(() => anonymousMemo.toMemo(data));
 });

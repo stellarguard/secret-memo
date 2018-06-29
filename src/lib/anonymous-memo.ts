@@ -2,7 +2,7 @@ import Cryptr from 'cryptr';
 import randomBytes from 'randombytes';
 import { Memo } from 'stellar-sdk';
 
-const MAX_MEMO_LENGTH = 22;
+const MAX_MEMO_LENGTH = 23;
 
 export default class MemoAnonymizer {
   private cryptr: Cryptr;
@@ -22,7 +22,7 @@ export default class MemoAnonymizer {
     const padding = randomBytes(paddingSize)
       .toString('hex')
       .slice(0, paddingSize);
-    const payload = data + padding + paddingSize.toString(16).padStart(2, '0');
+    const payload = data + padding + String.fromCharCode(paddingSize);
     const hash = this.cryptr.encrypt(payload);
     return Memo.hash(hash);
   }
@@ -30,7 +30,7 @@ export default class MemoAnonymizer {
   public fromMemo(memo: Memo): string {
     const hash = (memo.value as Buffer).toString('hex');
     const decrypted = this.cryptr.decrypt(hash);
-    const paddingSize = parseInt(decrypted.slice(-2), 16);
-    return decrypted.slice(0, -(2 + paddingSize));
+    const paddingSize = decrypted.slice(-1).charCodeAt(0);
+    return decrypted.slice(0, -(1 + paddingSize));
   }
 }
