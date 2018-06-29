@@ -1,3 +1,3 @@
-# anonymous-memo
+# @stellarguard/anonymous-memo
 
 Create anonymized memos for Stellar transaactions.

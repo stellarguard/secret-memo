@@ -1,3 +1,3 @@
-export * from './lib/async';
-export * from './lib/hash';
-export * from './lib/number';
+import AnonymousMemo from './lib/anonymous-memo';
+
+export default AnonymousMemo;
