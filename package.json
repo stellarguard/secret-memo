@@ -1,6 +1,6 @@
 {
   "name": "@stellarguard/secret-memo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Create secret memos for Stellar transactions.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
