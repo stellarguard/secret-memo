@@ -51,8 +51,7 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "cryptr": "^4.0.0",
-    "randombytes": "^2.0.6"
+    "cryptr": "^4.0.0"
   },
   "devDependencies": {
     "@types/stellar-sdk": "^0.8.3",
