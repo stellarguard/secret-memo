@@ -1,5 +1,6 @@
 // tslint:disable:no-expression-statement
 import { test } from 'ava';
+import { Memo } from 'stellar-sdk';
 import { SecretMemo } from './secret-memo';
 
 test('encrypts and decrypts to the same thing', t => {
@@ -16,20 +17,12 @@ test('encrypts and decrypts to the same thing', t => {
 });
 
 test('decrypts to text', t => {
-  const secreMemo = new SecretMemo('encryption secret');
+  const secretMemo = new SecretMemo('encryption secret');
   const data = 'tippity top secret';
-  const memo = secreMemo.toMemo(data);
+  const memo = secretMemo.toMemo(data);
 
-  t.is(secreMemo.fromMemoHash((memo.value as Buffer).toString('hex')), data);
+  t.is(secretMemo.fromMemoHash((memo.value as Buffer).toString('hex')), data);
 });
-
-function getData(length: number): string {
-  let data = '';
-  for (let i = 0; i < length; ++i) {
-    data += 'a';
-  }
-  return data;
-}
 
 test('allows 23 characters of data', t => {
   const secretMemo = new SecretMemo('encryption secret');
@@ -39,7 +32,21 @@ test('allows 23 characters of data', t => {
 });
 
 test('does not allow more than 23 characters of data', t => {
-  const secreMemo = new SecretMemo('encryption secret');
+  const secretMemo = new SecretMemo('encryption secret');
   const data = getData(24);
-  t.throws(() => secreMemo.toMemo(data));
+  t.throws(() => secretMemo.toMemo(data));
 });
+
+test('only allows memos of type hash to be decrypted', t => {
+  const secretMemo = new SecretMemo('encryption secret');
+
+  t.throws(() => secretMemo.fromMemo(Memo.text('text')));
+});
+
+function getData(length: number): string {
+  let data = '';
+  for (let i = 0; i < length; ++i) {
+    data += 'a';
+  }
+  return data;
+}
