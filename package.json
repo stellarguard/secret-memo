@@ -1,7 +1,7 @@
 {
-  "name": "@stellarguard/anonymous-memo",
+  "name": "@stellarguard/secret-memo",
   "version": "0.0.1",
-  "description": "Create anonymized memos for Stellar transaactions.",
+  "description": "Create secret memos for Stellar transactions.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",

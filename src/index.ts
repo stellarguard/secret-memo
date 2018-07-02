@@ -1,3 +1,1 @@
-import AnonymousMemo from './lib/anonymous-memo';
-
-export { AnonymousMemo };
+export { SecretMemo } from './lib/secret-memo';

@@ -353,8 +353,8 @@
     "@types/node" "*"
 
 "@types/stellar-sdk@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@types/stellar-sdk/-/stellar-sdk-0.8.3.tgz#b7cc7d6379ca8d1fd6b8fe8dfcf60fd3405efc55"
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@types/stellar-sdk/-/stellar-sdk-0.8.4.tgz#f09bd8f4bd39591908bf771ca2495cda9e4a869f"
   dependencies:
     "@types/node" "*"
 
