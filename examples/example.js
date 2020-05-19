@@ -1,6 +1,5 @@
 const { SecretMemo } = require('@stellarguard/secret-memo');
 const StellarSdk = require('stellar-sdk');
-StellarSdk.Network.useTestNetwork();
 const server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 
 const secretKey = 'its a secret to everybody'; // keep it secret, keep it safe
@@ -11,16 +10,21 @@ const keypair = StellarSdk.Keypair.fromSecret(
 );
 
 async function submitSecretMemo(secret) {
+  const fee = await server.fetchBaseFee();
   const sourceAccount = await server.loadAccount(keypair.publicKey());
-  const transaction = new StellarSdk.TransactionBuilder(sourceAccount)
+  const transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
+    fee: String(fee),
+    networkPassphrase: StellarSdk.Networks.TESTNET,
+  })
     .addMemo(secretMemo.toMemo(secret))
     .addOperation(
       StellarSdk.Operation.payment({
         amount: '1',
         asset: StellarSdk.Asset.native(),
-        destination: keypair.publicKey()
+        destination: keypair.publicKey(),
       })
     )
+    .setTimeout(0)
     .build();
 
   transaction.sign(keypair);
@@ -30,12 +34,11 @@ async function submitSecretMemo(secret) {
 }
 
 async function readSecretMemo(transactionId) {
-  const result = await server
-    .transactions()
-    .transaction(transactionId)
-    .call();
-
-  const transaction = new StellarSdk.Transaction(result.envelope_xdr);
+  const result = await server.transactions().transaction(transactionId).call();
+  const transaction = StellarSdk.TransactionBuilder.fromXDR(
+    result.envelope_xdr,
+    StellarSdk.Networks.TESTNET
+  );
   console.log('Your Secret:', secretMemo.fromMemo(transaction.memo));
 }
 
