@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto';
-import Cryptr from 'cryptr';
+import Cryptr from './cryptr';
 import { Memo, MemoHash } from 'stellar-sdk';
 
 const MAX_MEMO_LENGTH = 23; // 32 - 8 for randomness - 1 for padding length
