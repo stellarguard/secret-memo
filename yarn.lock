@@ -179,12 +179,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/stellar-sdk@^0.8.3":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@types/stellar-sdk/-/stellar-sdk-0.8.4.tgz#f09bd8f4bd39591908bf771ca2495cda9e4a869f"
-  dependencies:
-    "@types/node" "*"
-
 "@types/urijs@^1.19.6":
   version "1.19.8"
   resolved "https://registry.yarnpkg.com/@types/urijs/-/urijs-1.19.8.tgz#a66b2fd8b1d3cf3ef5bae7ca093b7d1b50e48c0a"
@@ -4361,10 +4355,10 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-stellar-base@^3.0.3:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-3.0.4.tgz#9f9b183921886c326609c37b701a725320e5e004"
-  integrity sha512-aSa5T7/y+jYmgdpyZKwvc13u1pR4MLI7yaDMaVV7tGp98lFcvd1F37QlZXf0j5QS7NVVpXWZ5iDmftZcjx2Euw==
+stellar-base@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-4.0.3.tgz#03a55fd8ebbd32804d94e87f41bdc56af2a6747b"
+  integrity sha512-Tf1Ko86j4CgUtaiTC6H6qPZ97EziXN6SVokH4FGv5+XvBhFg4V+u9ySMlgPjFbHQumplkHiw8JQx1IZRHnrT3A==
   dependencies:
     base32.js "^0.1.0"
     bignumber.js "^4.0.0"
@@ -4376,10 +4370,10 @@ stellar-base@^3.0.3:
   optionalDependencies:
     sodium-native "^2.3.0"
 
-stellar-sdk@^5.0.0:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-5.0.4.tgz#4839c52b70ab17c13517cd93cea4b04d5110580b"
-  integrity sha512-wwGfN5k+k0qoJkLZvScsnGKd5d2dE+DBRxzTnHur4CwlYvMWIzRY0GWS9YB3yCZmBaKsjC+bKEzacgSFge2PGA==
+stellar-sdk@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-7.0.0.tgz#9f4a8fbd5bd6c9be180872b13d1e0b6ada3ef5c8"
+  integrity sha512-90hGtqs4W79CFs2SoRtlNC03LysbSZa0UI/msEckQstFnuDzfTxh0GXaN/9EU9OmCE9F13hCIb+E/LBLlPNeHg==
   dependencies:
     "@types/eventsource" "^1.1.2"
     "@types/node" ">= 8"
@@ -4392,7 +4386,7 @@ stellar-sdk@^5.0.0:
     eventsource "^1.0.7"
     lodash "^4.17.11"
     randombytes "^2.1.0"
-    stellar-base "^3.0.3"
+    stellar-base "^4.0.0"
     toml "^2.3.0"
     tslib "^1.10.0"
     urijs "^1.19.1"
