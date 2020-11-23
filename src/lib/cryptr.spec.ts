@@ -1,5 +1,6 @@
+// tslint:disable:no-expression-statement
 import Cryptr from './cryptr';
-import { test } from 'ava';
+import test from 'ava';
 
 const testSecret = 'myTotalySecretKey';
 const testData = 'bacon';
@@ -45,7 +46,7 @@ test('goes bang if bad secret', (t) => {
   for (const badSecret of badSecrets) {
     t.throws(
       () => new Cryptr(badSecret),
-      /Cryptr: secret must be a non-0-length string/,
+      { message: 'Cryptr: secret must be a non-0-length string' },
       `throws on bad secret ${badSecret}`
     );
   }
@@ -60,7 +61,7 @@ test('encrypt goes bang if value is null or undefined', (t) => {
   for (const badValue of badValues) {
     t.throws(
       () => cryptr.encrypt(badValue),
-      /value must not be null or undefined/,
+      { message: 'value must not be null or undefined' },
       `throws on value ${badValue}`
     );
   }
@@ -75,7 +76,7 @@ test('decrypt goes bang if value is null or undefined', (t) => {
   for (const badValue of badValues) {
     t.throws(
       () => cryptr.decrypt(badValue),
-      /value must not be null or undefined/,
+      { message: 'value must not be null or undefined' },
       `throws on value ${badValue}`
     );
   }

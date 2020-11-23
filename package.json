@@ -48,13 +48,13 @@
     "prepare-release": "One-step: clean, build, test, publish docs, and prep a release"
   },
   "engines": {
-    "node": ">=10.0"
+    "node": ">=10.18.0"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^14.0.1",
     "@types/stellar-sdk": "^0.8.3",
-    "ava": "^1.0.0-beta.5.1",
+    "ava": "^3.0.0",
     "codecov": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^1.2.0",
@@ -77,9 +77,6 @@
     "failFast": true,
     "files": [
       "build/main/**/*.spec.js"
-    ],
-    "sources": [
-      "build/main/**/*.js"
     ]
   },
   "config": {
