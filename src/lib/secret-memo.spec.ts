@@ -1,5 +1,5 @@
 // tslint:disable:no-expression-statement
-import { test } from 'ava';
+import test from 'ava';
 import { Memo } from 'stellar-sdk';
 import { SecretMemo } from './secret-memo';
 
