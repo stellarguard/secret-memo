@@ -476,12 +476,12 @@ aws4@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
-axios@^0.19.0:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+axios@0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
-    follow-redirects "1.5.10"
+    follow-redirects "^1.10.0"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -1248,15 +1248,15 @@ debug-log@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debug-log/-/debug-log-1.0.1.tgz#2307632d4c04382b8df8a32f70b895046d52745f"
 
-debug@=3.1.0, debug@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
-  dependencies:
-    ms "2.0.0"
-
 debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -1741,12 +1741,10 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
+follow-redirects@^1.10.0:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
+  integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -4355,10 +4353,10 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-stellar-base@^4.0.0:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-4.0.3.tgz#03a55fd8ebbd32804d94e87f41bdc56af2a6747b"
-  integrity sha512-Tf1Ko86j4CgUtaiTC6H6qPZ97EziXN6SVokH4FGv5+XvBhFg4V+u9ySMlgPjFbHQumplkHiw8JQx1IZRHnrT3A==
+stellar-base@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-5.2.1.tgz#d280d592793bbedeefdd3c92819299fc5bcc7897"
+  integrity sha512-hsooqL2EPSwCZeaWDEvPDc5KG6U68qOCdpdX5b1IA7oDwSjeJ7B/pxZYxSv6JkQNGhkfllNn2k7AyBVo4FR3Sw==
   dependencies:
     base32.js "^0.1.0"
     bignumber.js "^4.0.0"
@@ -4370,23 +4368,23 @@ stellar-base@^4.0.0:
   optionalDependencies:
     sodium-native "^2.3.0"
 
-stellar-sdk@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-7.0.0.tgz#9f4a8fbd5bd6c9be180872b13d1e0b6ada3ef5c8"
-  integrity sha512-90hGtqs4W79CFs2SoRtlNC03LysbSZa0UI/msEckQstFnuDzfTxh0GXaN/9EU9OmCE9F13hCIb+E/LBLlPNeHg==
+stellar-sdk@^8.0.0:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/stellar-sdk/-/stellar-sdk-8.2.1.tgz#c66e23db4879eabaf574abc26246b3b0b5627006"
+  integrity sha512-L1QFFWR27NE9QTi/lBfawHS13xKzfgqykEKN/vRQ9nYtV7cQilSj+aIYgDG5nVJEVzag+evQVMvl0QVerHOoOA==
   dependencies:
     "@types/eventsource" "^1.1.2"
     "@types/node" ">= 8"
     "@types/randombytes" "^2.0.0"
     "@types/urijs" "^1.19.6"
-    axios "^0.19.0"
+    axios "0.21.1"
     bignumber.js "^4.0.0"
     detect-node "^2.0.4"
     es6-promise "^4.2.4"
     eventsource "^1.0.7"
     lodash "^4.17.11"
     randombytes "^2.1.0"
-    stellar-base "^4.0.0"
+    stellar-base "^5.2.1"
     toml "^2.3.0"
     tslib "^1.10.0"
     urijs "^1.19.1"

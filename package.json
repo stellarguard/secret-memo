@@ -62,7 +62,7 @@
     "opn-cli": "^3.1.0",
     "prettier": "^2.0.5",
     "standard-version": "^4.4.0",
-    "stellar-sdk": "^7.0.0",
+    "stellar-sdk": "^8.0.0",
     "trash-cli": "^1.4.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
@@ -70,7 +70,7 @@
     "typescript": "^3.9.2"
   },
   "peerDependencies": {
-    "stellar-sdk": ">=7.0.0"
+    "stellar-sdk": "*"
   },
   "ava": {
     "failFast": true,
